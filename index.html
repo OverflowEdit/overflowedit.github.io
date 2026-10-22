@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Overflow Edit | Freelance video editing for universities</title>
+<meta name="description" content="Freelance video editing for university media, communications, and online-learning teams. Videos up to 15 minutes from $135, with captions, brand-matched titles, and PO-friendly invoicing.">
+<meta property="og:title" content="Overflow Edit | Freelance video editing for universities">
+<meta property="og:description" content="Send raw footage, get back finished, captioned, on-brand videos. Packages from 3 to 30 videos.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#141A23">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141A23'/%3E%3Cpath d='M9 6h14l-7 8z' fill='%23EF4E55'/%3E%3Crect x='15' y='12' width='2' height='15' fill='%23EF4E55'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<!--
+  HOW TO EDIT THIS SITE
+  1. Email, reel link, prices, packages, and optional work samples: edit the CONFIG block near the bottom of this file.
+  2. Business name: find and replace "Overflow Edit".
+  3. Everything else is plain text in the HTML below.
+-->
+<style>
+  :root{
+    /* Layout: a dark edit-suite page. The hero is a program monitor comparing raw and finished footage; sections follow like scenes on a timeline. */
+    --bg:#141A23;
+    --bg-2:#19202B;
+    --bg-3:#222B39;
+    --bg-4:#2B3547;
+    --line:#2E394B;
+    --text:#ECEFF4;
+    --text-2:#B0B9C7;
+    --text-3:#8692A4;
+    --iris:#8479F4;
+    --iris-deep:#5D52D4;
+    --mango:#F2AA3F;
+    --mango-ink:#1E1505;
+    --teal:#2DB497;
+    --teal-deep:#167660;
+    --red:#EF4E55;
+    --font:"Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --wrap:1200px;
+    --gutter:24px;
+    color-scheme:dark;
+  }
+  @media (max-width:600px){ :root{ --gutter:16px; } }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  [hidden]{ display:none !important; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font); font-size:1.0625rem; line-height:1.6; }
+  h1,h2,h3{ margin:0; line-height:1.1; }
+  p{ margin:0; }
+  a{ color:inherit; }
+  svg{ display:block; }
+  .wrap{ max-width:var(--wrap); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter); }
+  :focus-visible{ outline:3px solid var(--mango); outline-offset:3px; border-radius:4px; }
+  .skip{ position:absolute; left:-9999px; top:8px; z-index:20; background:var(--mango); color:var(--mango-ink); padding:8px 12px; border-radius:6px; }
+  .skip:focus{ left:8px; }
+
+  .display{ font-family:var(--font); font-weight:800; font-stretch:68%; text-transform:uppercase; letter-spacing:.004em; line-height:.9; text-wrap:balance; }
+  .section{ padding-block:84px; }
+  .section-head{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:40px; align-items:end; }
+  .section h2{ font-size:clamp(2.5rem,5.6vw,4.75rem); }
+  .section-intro{ max-width:54ch; font-size:1.1rem; color:var(--text-2); }
+  .band{ background:var(--bg-2); border-block:1px solid var(--line); }
+  @media (max-width:820px){ .section-head{ grid-template-columns:1fr; gap:18px; } }
+  @media (max-width:600px){ .section{ padding-block:64px; } }
+
+  /* Buttons */
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 22px; border-radius:6px; border:1.5px solid transparent; font:inherit; font-size:1rem; font-weight:700; text-decoration:none; cursor:pointer; transition:background-color .15s, color .15s, border-color .15s; }
+  .btn-primary{ background:var(--mango); color:var(--mango-ink); }
+  .btn-primary:hover{ background:#FFC066; }
+  .btn-ghost{ border-color:var(--bg-4); color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--text-2); }
+  .btn-small{ padding:10px 16px; font-size:.92rem; }
+
+  /* Header */
+  .site-header{ padding-block:20px; }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .brand{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:800; font-stretch:118%; font-size:1.15rem; letter-spacing:-.005em; color:var(--text); }
+  .brand svg{ width:14px; height:22px; flex:none; }
+  .site-nav{ display:flex; align-items:center; gap:28px; font-size:.95rem; }
+  .site-nav a:not(.btn){ text-decoration:none; color:var(--text-2); }
+  .site-nav a:not(.btn):hover{ color:var(--text); }
+  @media (max-width:760px){ .site-nav a:not(.btn){ display:none; } }
+
+  /* Hero */
+  .hero{ padding-block:28px 72px; }
+  .hero h1{ font-size:clamp(3rem,8.6vw,7.6rem); }
+  .hero-row{ margin-top:32px; display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); gap:48px; align-items:center; }
+  .lede{ font-size:clamp(1.06rem,1.4vw,1.22rem); line-height:1.55; color:var(--text-2); max-width:50ch; }
+  .hero-actions{ margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; }
+  .facts{ margin-top:32px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--line); }
+  .fact{ padding:16px 16px 16px 0; border-bottom:1px solid var(--line); }
+  .fact:nth-child(odd){ border-right:1px solid var(--line); }
+  .fact:nth-child(even){ padding-left:20px; }
+  .fact strong{ display:block; font-weight:800; font-stretch:72%; font-size:1.7rem; line-height:1.05; letter-spacing:.01em; font-variant-numeric:tabular-nums; }
+  .fact span{ display:block; margin-top:4px; font-size:.9rem; color:var(--text-3); }
+  @media (max-width:960px){ .hero-row{ grid-template-columns:1fr; gap:36px; } }
+
+  /* Program monitor */
+  .nle{ padding:10px; border:1px solid var(--line); border-radius:14px; background:var(--bg-2); }
+  .nle-bar{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:4px 6px 10px; font-size:.82rem; color:var(--text-3); }
+  .nle-tc{ color:var(--mango); font-weight:700; font-size:.95rem; letter-spacing:.02em; font-variant-numeric:tabular-nums; }
+  .compare{ --pos:36%; position:relative; aspect-ratio:16/9; max-width:100%; overflow:hidden; border-radius:8px; background:#0E141B; container-type:inline-size; user-select:none; -webkit-user-select:none; touch-action:pan-y; cursor:ew-resize; }
+  .shot{ position:absolute; inset:0; overflow:hidden; }
+  .shot svg{ width:100%; height:100%; }
+  .shot-raw .scene{ filter:saturate(.22) contrast(.66) brightness(1.2); transform:scale(1.08) rotate(-1.2deg) translate(-1.2%,1%); }
+  .shot-raw::after{ content:""; position:absolute; inset:0; background:rgba(150,160,172,.12); }
+  .shot-fin{ clip-path:inset(0 0 0 var(--pos)); }
+  .chip{ position:absolute; top:3.5%; z-index:2; padding:.55cqw 1.2cqw; border-radius:999px; font-size:max(11px,1.3cqw); font-weight:700; line-height:1.2; }
+  .chip-raw{ left:2.5%; background:rgba(0,0,0,.6); color:#FFFFFF; }
+  .chip-fin{ right:2.5%; background:var(--mango); color:var(--mango-ink); }
+  .hud{ position:absolute; z-index:2; font-size:max(9px,1.2cqw); font-weight:600; letter-spacing:.05em; color:rgba(255,255,255,.8); font-variant-numeric:tabular-nums; }
+  .hud-top{ left:2.5%; top:11%; }
+  .hud-bot{ left:2.5%; bottom:4%; }
+  .lower3{ position:absolute; left:42%; bottom:19%; z-index:2; display:flex; }
+  .lower3 i{ width:.6cqw; background:var(--mango); }
+  .lower3 div{ padding:1.1cqw 1.8cqw; background:rgba(14,20,27,.84); }
+  .lower3 strong{ display:block; font-size:max(10px,2.3cqw); font-weight:750; line-height:1.15; color:#FFFFFF; }
+  .lower3 span{ display:block; margin-top:.3cqw; font-size:max(8px,1.45cqw); line-height:1.2; color:#D6DCE5; }
+  .caption{ position:absolute; left:50%; bottom:5.5%; z-index:2; transform:translateX(-50%); padding:.5cqw 1.3cqw; border-radius:.4cqw; background:rgba(0,0,0,.74); color:#FFFFFF; font-size:max(9px,1.9cqw); font-weight:550; line-height:1.3; white-space:nowrap; }
+  .handle{ position:absolute; top:0; bottom:0; left:var(--pos); z-index:3; width:2px; margin-left:-1px; background:#FFFFFF; pointer-events:none; box-shadow:0 0 0 1px rgba(0,0,0,.25); }
+  .knob{ position:absolute; top:50%; left:50%; width:46px; height:46px; margin:-23px 0 0 -23px; display:grid; place-items:center; border-radius:50%; background:#FFFFFF; color:var(--bg); box-shadow:0 3px 14px rgba(0,0,0,.4); }
+  .knob svg{ width:22px; height:22px; }
+  .compare input{ position:absolute; inset:0; z-index:4; width:100%; height:100%; margin:0; opacity:0; pointer-events:none; -webkit-appearance:none; appearance:none; }
+  .compare input:focus-visible ~ .handle .knob{ outline:3px solid var(--mango); outline-offset:3px; }
+  .compare-hint{ display:flex; justify-content:space-between; gap:12px; padding:10px 6px 2px; font-size:.85rem; color:var(--text-3); }
+  @media (max-width:600px){ .knob{ width:38px; height:38px; margin:-19px 0 0 -19px; } .hud{ display:none; } }
+
+  /* Selected work (shown only when CONFIG.work has items) */
+  .work-grid{ margin-top:44px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+  .work-card{ display:flex; flex-direction:column; gap:12px; text-decoration:none; }
+  .work-card img{ width:100%; max-width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; border:1px solid var(--line); background:var(--bg-3); }
+  .work-card strong{ font-size:1.1rem; }
+  .work-card span{ font-size:.9rem; color:var(--text-3); }
+  .work-card:hover strong{ text-decoration:underline; text-underline-offset:4px; }
+  @media (max-width:900px){ .work-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:560px){ .work-grid{ grid-template-columns:1fr; } }
+
+  /* Formats */
+  .formats{ margin-top:40px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+  .format{ display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--bg-2); }
+  .format > svg{ width:100%; max-width:100%; height:auto; aspect-ratio:16/9; }
+  .format-body{ flex:1; display:flex; flex-direction:column; gap:8px; padding:18px 20px 20px; }
+  .format h3{ font-size:1.18rem; font-weight:700; }
+  .format p{ font-size:.98rem; color:var(--text-2); }
+  .format .len{ margin-top:auto; padding-top:10px; font-size:.86rem; color:var(--mango); font-weight:600; font-variant-numeric:tabular-nums; }
+  .format-ask{ background:transparent; border-style:dashed; }
+  .ask-frame{ aspect-ratio:16/9; display:grid; place-items:center; border-bottom:1px dashed var(--line); color:var(--text-3); }
+  .ask-frame svg{ width:44px; height:44px; }
+  .format-ask a{ margin-top:auto; padding-top:10px; font-weight:700; color:var(--mango); text-decoration:none; }
+  .format-ask a:hover{ text-decoration:underline; text-underline-offset:4px; }
+  @media (max-width:960px){ .formats{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:600px){ .formats{ grid-template-columns:1fr; } }
+
+  /* How it works: steps beside the export settings */
+  .how{ margin-top:44px; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:56px; align-items:start; }
+  .steps{ list-style:none; margin:0; padding:0 0 0 30px; display:grid; gap:28px; border-left:2px solid var(--bg-4); }
+  .steps li{ position:relative; }
+  .steps li::before{ content:""; position:absolute; top:5px; left:-38px; width:13px; height:13px; background:var(--iris); transform:rotate(45deg); }
+  .steps .when{ display:block; font-size:.85rem; font-weight:700; color:var(--mango); font-variant-numeric:tabular-nums; }
+  .steps h3{ margin-top:4px; font-size:1.25rem; font-weight:750; }
+  .steps p{ margin-top:6px; font-size:1rem; color:var(--text-2); }
+  @media (max-width:900px){ .how{ grid-template-columns:1fr; gap:44px; } }
+  .export{ overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--bg); }
+  .export-head{ display:flex; justify-content:space-between; gap:12px; padding:12px 18px; background:var(--bg-3); font-size:.88rem; font-weight:700; color:var(--text); }
+  .export-head span{ font-weight:500; color:var(--text-3); }
+  .export dl{ margin:0; padding:4px 18px 4px; display:grid; grid-template-columns:auto minmax(0,1fr); }
+  .export dt{ padding:12px 24px 12px 0; font-size:.9rem; color:var(--text-3); border-bottom:1px solid var(--line); }
+  .export dd{ margin:0; padding:12px 0; font-size:.98rem; border-bottom:1px solid var(--line); }
+  .export dt:last-of-type, .export dd:last-of-type{ border-bottom:0; }
+  .export-foot{ display:flex; align-items:center; gap:14px; padding:14px 18px; border-top:1px solid var(--line); font-size:.88rem; color:var(--text-2); }
+  .meter{ flex:1; height:6px; border-radius:3px; background:var(--bg-4); overflow:hidden; }
+  .meter i{ display:block; height:100%; width:100%; background:var(--teal); }
+  @media (max-width:480px){ .export dl{ grid-template-columns:1fr; } .export dt{ padding-bottom:0; border-bottom:0; } .export dd{ padding-top:2px; } }
+
+  /* Packages */
+  .pkg-hint{ margin-top:36px; display:flex; align-items:center; gap:10px; font-size:1rem; font-weight:650; color:var(--text); }
+  .pkg-hint svg{ width:20px; height:20px; color:var(--mango); flex:none; }
+  .pkg-track{ margin-top:12px; display:flex; gap:8px; padding:10px; border-radius:12px; background:var(--bg); border:1px solid var(--line); }
+  .pkg-btn{ position:relative; flex:var(--grow,1) 1 0; min-width:0; display:flex; flex-direction:column; align-items:flex-start; gap:6px; padding:16px 16px 14px; border:1px solid var(--line); border-radius:8px; background:var(--bg-3); color:var(--text); font:inherit; text-align:left; cursor:pointer; transition:background-color .15s, border-color .15s, transform .15s; }
+  .pkg-btn:hover{ background:var(--bg-4); border-color:var(--text-3); transform:translateY(-2px); }
+  .pkg-btn[aria-selected="true"]{ background:var(--iris-deep); border-color:var(--mango); color:#FFFFFF; box-shadow:inset 0 0 0 1px var(--mango); transform:none; }
+  .pkg-btn[aria-selected="true"]::after{ content:""; position:absolute; left:50%; bottom:-20px; transform:translateX(-50%); border-left:11px solid transparent; border-right:11px solid transparent; border-top:11px solid var(--mango); }
+  .pkg-count{ font-size:1.6rem; font-weight:800; font-stretch:72%; line-height:1; text-transform:uppercase; font-variant-numeric:tabular-nums; }
+  .pkg-meta{ width:100%; display:flex; flex-wrap:wrap; justify-content:space-between; gap:2px 10px; font-size:.92rem; }
+  .pkg-name{ opacity:.85; }
+  .pkg-rate{ font-weight:700; color:var(--mango); font-variant-numeric:tabular-nums; }
+  .pkg-btn[aria-selected="true"] .pkg-rate{ color:#FFFFFF; }
+  .pkg-ticks{ display:flex; flex-wrap:wrap; gap:3px; margin-top:4px; }
+  .pkg-ticks i{ width:6px; height:12px; border-radius:1.5px; background:currentColor; opacity:.55; }
+  .pkg-action{ margin-top:10px; display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:999px; background:var(--bg); font-size:.84rem; font-weight:700; color:var(--text-2); transition:background-color .15s, color .15s; }
+  .pkg-action svg{ width:14px; height:14px; }
+  .pkg-btn:hover .pkg-action{ background:var(--mango); color:var(--mango-ink); }
+  .pkg-btn[aria-selected="true"] .pkg-action{ background:rgba(255,255,255,.18); color:#FFFFFF; }
+  .pkg-action .on{ display:none; }
+  .pkg-btn[aria-selected="true"] .pkg-action .on{ display:inline; }
+  .pkg-btn[aria-selected="true"] .pkg-action .off{ display:none; }
+  @media (prefers-reduced-motion:reduce){ .pkg-btn, .pkg-btn:hover{ transform:none; transition:none; } }
+  @media (max-width:720px){ .pkg-track{ flex-direction:column; } .pkg-btn{ flex:none; } .pkg-btn[aria-selected="true"]::after{ display:none; } }
+  .pkg-panel{ margin-top:16px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:48px; padding:36px; border:1px solid var(--line); border-radius:12px; background:var(--bg); transition:opacity .16s ease; }
+  .pkg-panel.is-changing{ opacity:0; }
+  @media (prefers-reduced-motion:reduce){ .pkg-panel{ transition:none; } }
+  .pkg-title{ font-size:2.2rem; font-weight:800; font-stretch:68%; text-transform:uppercase; line-height:1; }
+  .pkg-blurb{ margin-top:12px; color:var(--text-2); }
+  .pkg-price{ margin-top:24px; font-size:clamp(3.2rem,7vw,4.8rem); font-weight:800; font-stretch:72%; line-height:.95; font-variant-numeric:tabular-nums; }
+  .pkg-per{ margin-top:10px; color:var(--text-2); }
+  .pkg-cta{ margin-top:24px; }
+  .pkg-terms{ margin-top:14px; font-size:.9rem; color:var(--text-3); }
+  .pkg-details{ margin:0; display:grid; grid-template-columns:auto minmax(0,1fr); align-content:start; }
+  .pkg-details dt{ padding:14px 28px 14px 0; font-weight:700; border-bottom:1px solid var(--line); }
+  .pkg-details dd{ margin:0; padding:14px 0; color:var(--text-2); border-bottom:1px solid var(--line); }
+  .pkg-details dt:first-of-type, .pkg-details dd:first-of-type{ padding-top:0; }
+  .pkg-details dt:last-of-type, .pkg-details dd:last-of-type{ border-bottom:0; }
+  .pkg-details ul{ margin:0; padding-left:18px; }
+  @media (max-width:820px){ .pkg-panel{ grid-template-columns:1fr; gap:32px; padding:24px; } }
+  @media (max-width:480px){ .pkg-details{ grid-template-columns:1fr; } .pkg-details dt{ padding-bottom:2px; border-bottom:0; } .pkg-details dd{ padding-top:0; } }
+  .pkg-notes{ margin-top:40px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:36px; }
+  .pkg-notes h3{ margin-bottom:8px; font-size:1.05rem; font-weight:700; }
+  .pkg-notes p, .pkg-notes li{ font-size:.98rem; color:var(--text-2); }
+  .pkg-notes ul{ margin:0; padding-left:18px; }
+  @media (max-width:820px){ .pkg-notes{ grid-template-columns:1fr; gap:28px; } }
+  .noscript-table{ margin-top:32px; width:100%; border-collapse:collapse; }
+  .noscript-table th, .noscript-table td{ padding:10px 12px; text-align:left; border-bottom:1px solid var(--line); }
+
+  /* FAQ */
+  .faq-wrap{ display:grid; grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr); gap:64px; align-items:start; }
+  .faq{ border-top:1px solid var(--line); }
+  .faq details{ border-bottom:1px solid var(--line); }
+  .faq summary{ position:relative; padding:22px 44px 22px 0; list-style:none; cursor:pointer; font-size:1.15rem; font-weight:650; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{ content:""; position:absolute; right:8px; top:50%; width:11px; height:11px; border-right:2px solid var(--text-2); border-bottom:2px solid var(--text-2); transform:translateY(-70%) rotate(45deg); transition:transform .2s; }
+  .faq details[open] summary::after{ transform:translateY(-25%) rotate(-135deg); }
+  .faq details p{ max-width:62ch; padding-bottom:22px; color:var(--text-2); }
+  @media (prefers-reduced-motion:reduce){ .faq summary::after{ transition:none; } }
+  @media (max-width:860px){ .faq-wrap{ grid-template-columns:1fr; gap:28px; } }
+
+  /* Footer */
+  .site-footer{ padding-block:40px; border-top:1px solid var(--line); background:#10151D; }
+  .footer-inner{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px; font-size:.9rem; color:var(--text-3); }
+  .footer-inner a{ color:var(--text-2); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 14 22" aria-hidden="true"><path d="M0 0h14L7 8z" fill="#EF4E55"/><rect x="6" y="7" width="2" height="15" fill="#EF4E55"/></svg>
+      Overflow Edit
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#packages">Packages</a>
+      <a href="#formats">Formats</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary btn-small js-email" href="#packages">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1 class="display">Clear the video backlog.</h1>
+      <div class="hero-row">
+        <div class="hero-copy">
+          <p class="lede">Freelance editing for university media, communications, and online-learning teams that are short on editors. You send raw footage. I send back finished, captioned, on-brand video on a schedule you can plan around.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#packages">See packages</a>
+            <a class="btn btn-ghost" id="reel-btn" href="#formats" hidden>Watch the reel</a>
+            <a class="btn btn-ghost js-email" id="hero-email" href="#packages">Email me</a>
+          </div>
+          <div class="facts">
+            <div class="fact"><strong id="fact-price">$135 to $150</strong><span>per video, up to 15 minutes</span></div>
+            <div class="fact"><strong>5 days</strong><span>to your first rough cut</span></div>
+            <div class="fact"><strong>2 rounds</strong><span>of revisions on every video</span></div>
+            <div class="fact"><strong>PO + net-30</strong><span>university-friendly billing</span></div>
+          </div>
+        </div>
+        <div class="nle">
+          <div class="nle-bar">
+            <span>Faculty interview, cut 3</span>
+            <span class="nle-tc">00:02:14:08</span>
+          </div>
+        <div class="compare" id="compare">
+          <div class="shot shot-raw" aria-hidden="true">
+            <div class="scene" data-scene></div>
+            <span class="chip chip-raw">Raw</span>
+            <span class="hud hud-top">ISO 800 &nbsp; F2.8 &nbsp; 1/50 &nbsp; 5600K</span>
+            <span class="hud hud-bot">A001_C004_1021</span>
+          </div>
+          <div class="shot shot-fin" aria-hidden="true">
+            <div class="scene" data-scene></div>
+            <span class="chip chip-fin">Finished</span>
+            <div class="lower3"><i></i><div><strong>Dr. Maya Okafor</strong><span>Professor of Marine Science</span></div></div>
+            <span class="caption">The reef bounced back fast.</span>
+          </div>
+          <input type="range" id="compare-range" min="0" max="100" value="36" aria-label="Compare raw footage with the finished edit">
+          <div class="handle"><div class="knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        </div>
+          <div class="compare-hint"><span>Drag to compare raw footage with a finished edit.</span><span>Illustration</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="packages">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="display">Packages</h2>
+        <p class="section-intro">Every package is priced per video, and each video can run up to <span data-cfg-plain="maxMinutes">15</span> minutes. The per-video rate drops as the count goes up.</p>
+      </div>
+
+      <p class="pkg-hint" id="pkg-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.2a5 5 0 0 1-3.9-1.9L4.6 16a1.6 1.6 0 0 1 2.5-2L9 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Select a package to see its price and what's included</p>
+      <div class="pkg-track" id="pkg-track" role="tablist" aria-labelledby="pkg-hint"></div>
+      <div class="pkg-panel" id="pkg-panel" role="tabpanel" tabindex="0"></div>
+
+      <noscript>
+        <table class="noscript-table">
+          <thead><tr><th>Package</th><th>Videos</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>Pilot</td><td>3</td><td>$450</td></tr>
+            <tr><td>Semester</td><td>8</td><td>$1,160</td></tr>
+            <tr><td>Backlog</td><td>15</td><td>$2,100</td></tr>
+            <tr><td>Department</td><td>30</td><td>$4,050</td></tr>
+          </tbody>
+        </table>
+      </noscript>
+
+      <div class="pkg-notes">
+        <div>
+          <h3>What counts as one video</h3>
+          <p>A finished video up to <span data-cfg-plain="maxMinutes">15</span> minutes long. Longer videos count as one video for each <span data-cfg-plain="maxMinutes">15</span> minutes or part of it, so a 40-minute lecture recording counts as three.</p>
+        </div>
+        <div>
+          <h3>One-off and custom work</h3>
+          <p>Single videos are <span data-cfg="singleVideoPrice">$150</span> each. Motion graphics, animation, or anything outside a package is <span data-cfg="hourlyRate">$35</span> an hour, quoted up front.</p>
+        </div>
+        <div>
+          <h3>Add-ons</h3>
+          <ul>
+            <li>Rush rough cut in 2 business days: +25% per video</li>
+            <li>Extra revision round: $25</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" hidden>
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="display">Selected work</h2>
+        <p class="section-intro">A few recent edits. Each opens the full video.</p>
+      </div>
+      <div class="work-grid" id="work-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="formats">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="display">What I edit</h2>
+        <p class="section-intro">Most university video falls into a handful of formats. I can take any of them from raw footage to a finished file.</p>
+      </div>
+      <div class="formats">
+        <article class="format">
+          <svg viewBox="0 0 320 180" role="img" aria-label="Illustration of a course intro: an instructor beside a module title card">
+            <rect width="320" height="180" fill="#22324A"/>
+            <circle cx="262" cy="30" r="70" fill="#F2AA3F" opacity=".1"/>
+            <rect y="136" width="320" height="44" fill="#1A2638"/>
+            <path d="M40 180C44 138 66 120 92 119C118 120 140 138 144 180Z" fill="#2DB497"/>
+            <rect x="84" y="96" width="16" height="24" fill="#9C6848"/>
+            <ellipse cx="92" cy="84" rx="21" ry="25" fill="#B07A57"/>
+            <path d="M71 82C70 62 82 56 93 56C106 56 115 64 113 82C109 70 101 67 92 67C83 67 75 71 71 82Z" fill="#3A2A20"/>
+            <rect x="166" y="44" width="128" height="80" rx="6" fill="#5D52D4"/>
+            <rect x="180" y="60" width="44" height="7" rx="2" fill="#F2AA3F"/>
+            <rect x="180" y="76" width="96" height="11" rx="2" fill="#FFFFFF"/>
+            <rect x="180" y="93" width="74" height="11" rx="2" fill="#FFFFFF"/>
+            <rect x="180" y="111" width="52" height="4" rx="2" fill="#FFFFFF" opacity=".5"/>
+          </svg>
+          <div class="format-body">
+            <h3>Course and module intros</h3>
+            <p>Tighten on-camera welcomes for online and hybrid courses, then add titles, b-roll, and slides.</p>
+            <span class="len">1 to 3 minutes</span>
+          </div>
+        </article>
+        <article class="format">
+          <svg viewBox="0 0 320 180" role="img" aria-label="Illustration of a faculty interview with a name lower third">
+            <rect width="320" height="180" fill="#21414B"/>
+            <rect x="20" y="22" width="70" height="96" fill="#F2C27A" opacity=".5"/>
+            <rect x="54" y="22" width="3" height="96" fill="#21414B"/>
+            <rect x="232" y="16" width="80" height="146" fill="#183039"/>
+            <rect x="238" y="30" width="7" height="30" fill="#8479F4" opacity=".7"/><rect x="247" y="36" width="9" height="24" fill="#F2AA3F" opacity=".7"/><rect x="258" y="28" width="6" height="32" fill="#E8DFCF" opacity=".6"/><rect x="266" y="34" width="10" height="26" fill="#2DB497" opacity=".7"/><rect x="279" y="31" width="7" height="29" fill="#EF4E55" opacity=".6"/>
+            <rect x="232" y="60" width="80" height="4" fill="#0F1F26"/>
+            <rect x="240" y="76" width="8" height="28" fill="#2DB497" opacity=".6"/><rect x="250" y="80" width="10" height="24" fill="#E8DFCF" opacity=".55"/><rect x="263" y="74" width="7" height="30" fill="#F2AA3F" opacity=".65"/><rect x="273" y="78" width="9" height="26" fill="#8479F4" opacity=".6"/>
+            <rect x="232" y="104" width="80" height="4" fill="#0F1F26"/>
+            <path d="M140 180C146 132 172 112 205 111C238 112 264 132 270 180Z" fill="#B5523F"/>
+            <path d="M190 113L205 134L220 113L214 111L205 124L196 111Z" fill="#EDE6DA"/>
+            <rect x="197" y="92" width="16" height="22" fill="#8E5A3E"/>
+            <ellipse cx="205" cy="78" rx="20" ry="25" fill="#A06A4A"/>
+            <path d="M185 78C183 56 195 50 206 50C220 50 228 58 226 78C222 64 214 61 205 61C196 61 189 66 185 78Z" fill="#231915"/>
+            <rect x="191" y="74" width="12" height="8" rx="3" fill="none" stroke="#1A1412" stroke-width="1.5"/><rect x="207" y="74" width="12" height="8" rx="3" fill="none" stroke="#1A1412" stroke-width="1.5"/>
+            <rect x="18" y="128" width="4" height="28" fill="#F2AA3F"/><rect x="22" y="128" width="106" height="28" fill="#0E141B" opacity=".86"/>
+            <rect x="30" y="135" width="64" height="6" rx="1" fill="#FFFFFF"/><rect x="30" y="146" width="86" height="4" rx="1" fill="#FFFFFF" opacity=".6"/>
+          </svg>
+          <div class="format-body">
+            <h3>Faculty and student interviews</h3>
+            <p>Sync cameras and audio, shape the story, and add lower thirds and music.</p>
+            <span class="len">3 to 8 minutes</span>
+          </div>
+        </article>
+        <article class="format">
+          <svg viewBox="0 0 320 180" role="img" aria-label="Illustration of a lecture recording with slides, a picture-in-picture presenter, and captions">
+            <rect width="320" height="180" fill="#1A2230"/>
+            <rect x="24" y="18" width="206" height="124" rx="4" fill="#E9EDF3"/>
+            <rect x="38" y="30" width="96" height="8" rx="2" fill="#2B3547"/>
+            <rect x="44" y="96" width="22" height="32" fill="#8479F4"/><rect x="76" y="78" width="22" height="50" fill="#2DB497"/><rect x="108" y="60" width="22" height="68" fill="#F2AA3F"/><rect x="140" y="86" width="22" height="42" fill="#8479F4"/><rect x="172" y="70" width="22" height="58" fill="#2DB497"/>
+            <rect x="38" y="128" width="178" height="2" fill="#9AA6B8"/>
+            <rect x="238" y="90" width="66" height="52" rx="4" fill="#2B3B52" stroke="#0E141B" stroke-width="2"/>
+            <path d="M248 142C250 126 259 120 271 120C283 120 292 126 294 142Z" fill="#4A6FA5"/>
+            <ellipse cx="271" cy="109" rx="9" ry="11" fill="#C08860"/>
+            <path d="M262 108C261 98 266 95 271 95C277 95 281 99 280 108C278 102 275 101 271 101C267 101 264 103 262 108Z" fill="#5A3A28"/>
+            <rect x="58" y="152" width="164" height="16" rx="2" fill="#000000" opacity=".72"/><rect x="68" y="158" width="144" height="4" rx="1" fill="#FFFFFF"/>
+          </svg>
+          <div class="format-body">
+            <h3>Lecture recordings</h3>
+            <p>Trim false starts and dead air, fix audio, insert slides, and caption for Canvas, Kaltura, or Panopto.</p>
+            <span class="len">20 to 75 minutes (counts as one video per 15 minutes)</span>
+          </div>
+        </article>
+        <article class="format">
+          <svg viewBox="0 0 320 180" role="img" aria-label="Illustration of an event recap: a speaker at a podium under stage lights">
+            <rect width="320" height="180" fill="#121826"/>
+            <rect x="60" y="20" width="200" height="72" fill="#5D52D4" opacity=".85"/>
+            <rect x="84" y="42" width="120" height="10" rx="2" fill="#FFFFFF"/><rect x="84" y="60" width="80" height="6" rx="2" fill="#FFFFFF" opacity=".6"/>
+            <polygon points="36,0 70,0 178,150 118,150" fill="#F2AA3F" opacity=".15"/>
+            <polygon points="250,0 284,0 202,150 142,150" fill="#F2AA3F" opacity=".15"/>
+            <rect y="122" width="320" height="58" fill="#1C2433"/>
+            <path d="M155 100C157 92 162 90 170 90C178 90 183 92 185 100Z" fill="#2B3547"/>
+            <ellipse cx="170" cy="80" rx="9" ry="11" fill="#A06A4A"/>
+            <path d="M146 98L194 98L188 140L152 140Z" fill="#2E394B"/>
+            <g fill="#0A0F17"><ellipse cx="22" cy="182" rx="22" ry="16"/><circle cx="22" cy="158" r="11"/><ellipse cx="62" cy="184" rx="22" ry="16"/><circle cx="62" cy="161" r="11"/><ellipse cx="102" cy="182" rx="22" ry="16"/><circle cx="102" cy="158" r="12"/><ellipse cx="142" cy="185" rx="22" ry="16"/><circle cx="142" cy="162" r="11"/><ellipse cx="182" cy="182" rx="22" ry="16"/><circle cx="182" cy="158" r="12"/><ellipse cx="222" cy="184" rx="22" ry="16"/><circle cx="222" cy="160" r="11"/><ellipse cx="262" cy="182" rx="22" ry="16"/><circle cx="262" cy="158" r="12"/><ellipse cx="302" cy="185" rx="22" ry="16"/><circle cx="302" cy="162" r="11"/></g>
+          </svg>
+          <div class="format-body">
+            <h3>Event recaps</h3>
+            <p>Turn commencement, symposia, and speaker series into highlight reels and clean full-session cuts.</p>
+            <span class="len">2-minute highlights, plus full sessions</span>
+          </div>
+        </article>
+        <article class="format">
+          <svg viewBox="0 0 320 180" role="img" aria-label="Illustration of an explainer video and its vertical social version">
+            <rect width="320" height="180" fill="#1E2A3B"/>
+            <rect x="20" y="42" width="166" height="94" rx="4" fill="#167660"/>
+            <circle cx="66" cy="89" r="24" fill="#F2AA3F"/>
+            <rect x="104" y="68" width="64" height="9" rx="2" fill="#FFFFFF"/><rect x="104" y="84" width="48" height="9" rx="2" fill="#FFFFFF" opacity=".7"/>
+            <path d="M104 116L120 102L136 116Z" fill="#8479F4"/><rect x="142" y="104" width="24" height="12" rx="2" fill="#EF4E55"/>
+            <path d="M193 89H210" stroke="#8692A4" stroke-width="2"/><path d="M205 83L212 89L205 95" fill="none" stroke="#8692A4" stroke-width="2"/>
+            <rect x="220" y="14" width="80" height="152" rx="12" fill="#0E141B"/>
+            <rect x="226" y="24" width="68" height="132" rx="6" fill="#167660"/>
+            <circle cx="260" cy="72" r="22" fill="#F2AA3F"/>
+            <rect x="234" y="110" width="52" height="10" rx="2" fill="#FFFFFF"/><rect x="240" y="124" width="40" height="8" rx="2" fill="#FFFFFF" opacity=".7"/>
+          </svg>
+          <div class="format-body">
+            <h3>Explainers and promos</h3>
+            <p>Program promos and research explainers, with vertical and square versions for social.</p>
+            <span class="len">1 to 3 minutes, plus 30-second social cuts</span>
+          </div>
+        </article>
+        <article class="format format-ask">
+          <div class="ask-frame" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M22 10v24M10 22h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <div class="format-body">
+            <h3>Something else?</h3>
+            <p>Training videos, alumni stories, recruiting pieces, testimonials. If it's footage that needs editing, it probably fits.</p>
+            <a class="js-email" href="#packages">Email me about it</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="display">How it works</h2>
+        <p class="section-intro">You keep control of priorities and approvals. Every video comes back graded, mixed, titled, and captioned, ready to publish.</p>
+      </div>
+      <div class="how">
+        <ol class="steps">
+          <li>
+            <span class="when">Day 1</span>
+            <h3>Kickoff</h3>
+            <p>A 30-minute call to agree on style, specs, and priorities. Then share a folder with your footage and brand guide.</p>
+          </li>
+          <li>
+            <span class="when">Within 5 business days</span>
+            <h3>Rough cut</h3>
+            <p>Your first rough cut arrives on a private review link. After that, videos follow your package schedule.</p>
+          </li>
+          <li>
+            <span class="when">2 rounds included</span>
+            <h3>Review</h3>
+            <p>You and your stakeholders leave time-stamped comments right on the video. There's nothing to install.</p>
+          </li>
+          <li>
+            <span class="when">On schedule</span>
+            <h3>Delivery</h3>
+            <p>Final files in the formats you need, with captions and a transcript, ready to publish.</p>
+          </li>
+        </ol>
+        <div class="export">
+          <div class="export-head">Export settings<span>Applied to every video</span></div>
+          <dl>
+            <dt>Format</dt><dd>H.264 MP4 at 1080p, or 4K when your footage supports it</dd>
+            <dt>Color</dt><dd>Corrected and matched across every shot</dd>
+            <dt>Audio</dt><dd>Leveled for web playback (&minus;16 LUFS) with background noise reduced</dd>
+            <dt>Graphics</dt><dd>Titles, lower thirds, and end slates from your brand guide</dd>
+            <dt>Music</dt><dd>Royalty-free licensed tracks</dd>
+            <dt>Captions</dt><dd>SRT and VTT files, reviewed by a person</dd>
+            <dt>Transcript</dt><dd>Plain text, for accessibility and search</dd>
+            <dt>Destinations</dt><dd>YouTube, Vimeo, Kaltura, Panopto, Canvas, or social</dd>
+            <dt>Archive</dt><dd>Project files kept for 6 months after delivery</dd>
+          </dl>
+          <div class="export-foot"><div class="meter"><i></i></div>Included in every package</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap faq-wrap">
+      <h2 class="display">Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Do you film, or only edit?</summary>
+          <p>I edit. Your team, a student crew, or a videographer handles the shoot, and I take it from raw footage to finished video.</p>
+        </details>
+        <details>
+          <summary>How do you get our footage?</summary>
+          <p>Share a Box, Google Drive, OneDrive, or Dropbox folder. Footage stays in your storage, and I delete my working copies after delivery on request.</p>
+        </details>
+        <details>
+          <summary>What if a video runs longer than 15 minutes?</summary>
+          <p>It counts as one video for each 15 minutes or part of it. A 40-minute lecture recording uses three videos from your package.</p>
+        </details>
+        <details>
+          <summary>Can you match our brand?</summary>
+          <p>Yes. Send your brand guide, fonts, and logo files, and I'll build titles, lower thirds, and end slates to match. Semester and larger packages include a reusable template.</p>
+        </details>
+        <details>
+          <summary>What does a revision round cover?</summary>
+          <p>One consolidated set of notes from your team, left as time-stamped comments on the review link. Extra rounds are $25 each.</p>
+        </details>
+        <details>
+          <summary>How does billing work with a university?</summary>
+          <p>I provide a W-9, complete your supplier onboarding, and invoice as videos are delivered. Purchase orders and net-30 terms are fine.</p>
+        </details>
+        <details>
+          <summary>Who owns the finished videos?</summary>
+          <p>You do. Once an invoice is paid, the finished videos and captions are yours to publish however you like.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 14 22" aria-hidden="true"><path d="M0 0h14L7 8z" fill="#EF4E55"/><rect x="6" y="7" width="2" height="15" fill="#EF4E55"/></svg>
+      Overflow Edit
+    </a>
+    <span>Freelance video editing for colleges and universities.</span>
+    <span>&copy; 2026 Overflow Edit</span>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   CONFIG: edit your email, reel, prices, packages, and work samples here.
+   Package prices are calculated as videos x perVideo.
+   ===================================================================== */
+const CONFIG = {
+  email: "OverflowEdit@proton.me", // your contact email
+  reelUrl: "",                    // link to your showreel on YouTube or Vimeo; leave "" to hide the button
+  singleVideoPrice: 150,          // price for one video bought on its own
+  hourlyRate: 35,                 // rate for custom or hourly work
+  maxMinutes: 15,                 // maximum finished length of one video
+  defaultPackage: "backlog",      // which package is open when the page loads
+  // Optional work samples. Add items to show a "Selected work" section, for example:
+  // { title: "Welcome to Data Science 101", type: "Course intro", url: "https://vimeo.com/...", image: "images/ds101.jpg" }
+  work: [],
+  packages: [
+    {
+      id: "pilot",
+      name: "Pilot",
+      videos: 3,
+      perVideo: 150,
+      blurb: "A low-risk way to see how I work, using a few of your priority videos.",
+      bestFor: "Testing the fit before committing to more",
+      schedule: "First rough cut within 5 business days; all 3 delivered within about 3 weeks",
+      revisions: "2 rounds per video",
+      extras: ["If you move up to a larger package within 30 days, the Pilot price counts toward it"]
+    },
+    {
+      id: "semester",
+      name: "Semester",
+      videos: 8,
+      perVideo: 145,
+      blurb: "Enough for a course's module intros or a term's worth of events and promos.",
+      bestFor: "One course, program, or office with a defined list of videos",
+      schedule: "About 1 video a week; done in roughly 8 weeks",
+      revisions: "2 rounds per video",
+      extras: ["A reusable title and lower-third template built to your brand guide"]
+    },
+    {
+      id: "backlog",
+      name: "Backlog",
+      videos: 15,
+      perVideo: 140,
+      blurb: "For teams working through a queue of shot-but-unedited footage while they rehire.",
+      bestFor: "Clearing a backlog while your team is short-staffed",
+      schedule: "1 to 2 videos a week; done in about 10 weeks, with a short weekly status update",
+      revisions: "2 rounds per video",
+      extras: ["Brand title and lower-third template", "Custom thumbnail for each video", "You set the priority order and can change it anytime"]
+    },
+    {
+      id: "department",
+      name: "Department",
+      videos: 30,
+      perVideo: 135,
+      blurb: "Steady, reserved editing capacity across a full semester.",
+      bestFor: "Covering an open editor position for a semester",
+      schedule: "About 2 videos a week, reserved for you, across roughly 16 weeks",
+      revisions: "3 rounds per video",
+      extras: ["Everything in Backlog", "A 30-minute check-in call each week", "Monthly invoicing"]
+    }
+  ]
+};
+/* ===================================================================== */
+
+(function () {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const money = n => "$" + n.toLocaleString("en-US");
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const mailto = (subject, body) =>
+    "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+  /* Email links, reel button, and config-driven text */
+  const generalBody = "Hi,\n\nI'd like to talk about video editing help.\n\nOrganization:\nTypes of videos:\nRough number of videos:\nIdeal start date:\n";
+  document.querySelectorAll(".js-email").forEach(a => { a.href = mailto("Video editing inquiry", generalBody); });
+  document.querySelectorAll("[data-email-text]").forEach(el => { el.textContent = CONFIG.email; });
+  document.querySelectorAll("[data-cfg]").forEach(el => {
+    const v = CONFIG[el.dataset.cfg];
+    if (v !== undefined) el.textContent = typeof v === "number" ? money(v) : v;
+  });
+  document.querySelectorAll("[data-cfg-plain]").forEach(el => {
+    const v = CONFIG[el.dataset.cfgPlain];
+    if (v !== undefined) el.textContent = v;
+  });
+  const prices = CONFIG.packages.map(p => p.perVideo).concat(CONFIG.singleVideoPrice);
+  document.getElementById("fact-price").textContent = money(Math.min(...prices)) + " to " + money(Math.max(...prices));
+  if (CONFIG.reelUrl) {
+    const reel = document.getElementById("reel-btn");
+    reel.href = CONFIG.reelUrl;
+    reel.target = "_blank";
+    reel.rel = "noopener";
+    reel.hidden = false;
+    document.getElementById("hero-email").hidden = true;
+  }
+
+  /* Optional work samples */
+  if (CONFIG.work && CONFIG.work.length) {
+    const grid = document.getElementById("work-grid");
+    grid.innerHTML = CONFIG.work.map(w =>
+      '<a class="work-card" href="' + esc(w.url) + '" target="_blank" rel="noopener">' +
+        '<img src="' + esc(w.image) + '" alt="" loading="lazy">' +
+        '<strong>' + esc(w.title) + '</strong><span>' + esc(w.type || "") + '</span></a>'
+    ).join("");
+    document.getElementById("work").hidden = false;
+  }
+
+  /* Hero scene: one illustrated interview frame used for both the raw and finished layers */
+  function sceneSVG() {
+    let seed = 7;
+    const r = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    const colors = ["#8479F4", "#F2AA3F", "#2DB497", "#EF4E55", "#E8DFCF", "#4A6FA5", "#C98A4B"];
+    const shelves = [{ y: 100, h: 140 }, { y: 254, h: 140 }, { y: 408, h: 140 }, { y: 562, h: 150 }];
+    let books = "";
+    shelves.forEach(s => {
+      let x = 1196;
+      while (x < 1540) {
+        const w = 14 + r() * 22, hh = s.h * (0.7 + r() * 0.27);
+        if (x + w > 1544) break;
+        books += '<rect x="' + x.toFixed(1) + '" y="' + (s.y + s.h - hh).toFixed(1) + '" width="' + (w - 2).toFixed(1) + '" height="' + hh.toFixed(1) + '" fill="' + colors[Math.floor(r() * colors.length)] + '" opacity="' + (0.5 + r() * 0.35).toFixed(2) + '"/>';
+        x += w;
+        if (r() < 0.12) x += 26;
+      }
+      books += '<rect x="1180" y="' + (s.y + s.h) + '" width="380" height="14" fill="#0D1A22"/>';
+    });
+    return '<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">' +
+      '<defs>' +
+        '<linearGradient id="wallG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A4A57"/><stop offset="1" stop-color="#172833"/></linearGradient>' +
+        '<radialGradient id="winG" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#FFE7BA"/><stop offset=".55" stop-color="#F3BC6C"/><stop offset="1" stop-color="#C98340"/></radialGradient>' +
+        '<radialGradient id="glowG" cx=".2" cy=".35" r=".65"><stop offset="0" stop-color="#F6C27A" stop-opacity=".42"/><stop offset="1" stop-color="#F6C27A" stop-opacity="0"/></radialGradient>' +
+        '<linearGradient id="sweaterG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C7614A"/><stop offset="1" stop-color="#99442F"/></linearGradient>' +
+        '<filter id="softF" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter>' +
+        '<filter id="bokehF" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>' +
+        '<clipPath id="headC"><ellipse cx="980" cy="362" rx="92" ry="112"/></clipPath>' +
+      '</defs>' +
+      '<rect width="1600" height="900" fill="url(#wallG)"/>' +
+      '<g filter="url(#softF)">' +
+        '<rect x="90" y="110" width="420" height="570" rx="6" fill="url(#winG)"/>' +
+        '<rect x="292" y="110" width="16" height="570" fill="#24404D"/><rect x="90" y="388" width="420" height="16" fill="#24404D"/>' +
+        '<polygon points="510,130 930,430 930,640 510,680" fill="#F6C27A" opacity=".07"/>' +
+        '<g transform="translate(560 600)"><path d="M10 120 L90 120 L80 40 L20 40 Z" fill="#7E5236"/>' +
+          '<ellipse cx="30" cy="0" rx="22" ry="60" fill="#2F6B53" transform="rotate(-28 30 0)"/><ellipse cx="60" cy="-12" rx="22" ry="70" fill="#3E8466"/><ellipse cx="88" cy="4" rx="20" ry="58" fill="#2F6B53" transform="rotate(30 88 4)"/></g>' +
+        '<rect x="1180" y="80" width="380" height="650" fill="#132430"/>' + books +
+      '</g>' +
+      '<rect width="1600" height="900" fill="url(#glowG)"/>' +
+      '<g filter="url(#bokehF)"><circle cx="1290" cy="190" r="40" fill="#FFD08A" opacity=".5"/><circle cx="1470" cy="330" r="30" fill="#FFD08A" opacity=".4"/><circle cx="1380" cy="520" r="46" fill="#FFC56F" opacity=".35"/><circle cx="1230" cy="640" r="28" fill="#FFE3B0" opacity=".35"/></g>' +
+      '<rect y="800" width="1600" height="100" fill="#0F1E27"/>' +
+      '<ellipse cx="1030" cy="600" rx="260" ry="320" fill="#0B161D" opacity=".28" filter="url(#bokehF)"/>' +
+      '<path d="M700 900C716 690 820 548 980 542C1140 548 1244 690 1260 900Z" fill="url(#sweaterG)"/>' +
+      '<path d="M908 556L980 650L1052 556L1026 546L980 606L934 546Z" fill="#EDE6DA"/>' +
+      '<rect x="944" y="440" width="72" height="116" fill="#8C5A3D"/>' +
+      '<ellipse cx="980" cy="362" rx="92" ry="112" fill="#A46D4C"/>' +
+      '<ellipse cx="1028" cy="376" rx="58" ry="104" fill="#87553A" opacity=".45" clip-path="url(#headC)"/>' +
+      '<ellipse cx="1068" cy="372" rx="14" ry="24" fill="#93603F"/>' +
+      '<path d="M888 360C880 258 940 228 985 230C1050 232 1086 278 1076 360C1062 300 1022 284 985 285C946 286 906 300 888 360Z" fill="#231915"/>' +
+      '<rect x="918" y="350" width="54" height="36" rx="13" fill="none" stroke="#17110E" stroke-width="5"/><rect x="990" y="350" width="54" height="36" rx="13" fill="none" stroke="#17110E" stroke-width="5"/><path d="M972 364H990" stroke="#17110E" stroke-width="5"/>' +
+      '<path d="M748 770C768 680 826 584 906 558" stroke="#FFD9A0" stroke-width="7" fill="none" opacity=".35" stroke-linecap="round"/>' +
+    '</svg>';
+  }
+  const scene = sceneSVG();
+  document.querySelectorAll("[data-scene]").forEach(el => { el.innerHTML = scene; });
+
+  /* Before/after comparison: drag, click, or use arrow keys */
+  const compare = document.getElementById("compare");
+  const range = document.getElementById("compare-range");
+  let sweeping = false;
+  const setPos = v => {
+    const clamped = Math.max(0, Math.min(100, v));
+    compare.style.setProperty("--pos", clamped + "%");
+    range.value = Math.round(clamped);
+  };
+  const posFromEvent = e => {
+    const rect = compare.getBoundingClientRect();
+    return (e.clientX - rect.left) / rect.width * 100;
+  };
+  let dragging = false;
+  compare.addEventListener("pointerdown", e => {
+    sweeping = false; dragging = true;
+    compare.setPointerCapture(e.pointerId);
+    setPos(posFromEvent(e));
+  });
+  compare.addEventListener("pointermove", e => { if (dragging) setPos(posFromEvent(e)); });
+  const endDrag = () => { dragging = false; };
+  compare.addEventListener("pointerup", endDrag);
+  compare.addEventListener("pointercancel", endDrag);
+  range.addEventListener("input", () => { sweeping = false; setPos(Number(range.value)); });
+
+  if (!reduceMotion) {
+    const stops = [36, 76, 14, 36];
+    const segment = 900, delay = 700;
+    let start = null;
+    sweeping = true;
+    const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const step = now => {
+      if (!sweeping) return;
+      if (start === null) start = now + delay;
+      const t = (now - start) / segment;
+      if (t < 0) { requestAnimationFrame(step); return; }
+      const i = Math.floor(t);
+      if (i >= stops.length - 1) { setPos(stops[stops.length - 1]); sweeping = false; return; }
+      setPos(stops[i] + (stops[i + 1] - stops[i]) * ease(t - i));
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  /* Package buttons and details panel */
+  const track = document.getElementById("pkg-track");
+  const panel = document.getElementById("pkg-panel");
+  const tabs = CONFIG.packages.map(p => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "pkg-btn";
+    b.id = "tab-" + p.id;
+    b.dataset.id = p.id;
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-controls", "pkg-panel");
+    b.style.setProperty("--grow", (2 + Math.sqrt(p.videos)).toFixed(2));
+    b.innerHTML =
+      '<span class="pkg-count">' + p.videos + ' videos</span>' +
+      '<span class="pkg-meta"><span class="pkg-name">' + esc(p.name) + '</span><span class="pkg-rate">' + money(p.perVideo) + '/video</span></span>' +
+      '<span class="pkg-ticks" aria-hidden="true">' + "<i></i>".repeat(p.videos) + '</span>' +
+      '<span class="pkg-action"><span class="off">View details</span><span class="on">Selected</span>' +
+        '<svg viewBox="0 0 16 16" aria-hidden="true"><path class="off" d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path class="on" d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+    track.appendChild(b);
+    return b;
+  });
+
+  function panelHTML(p) {
+    const total = p.videos * p.perVideo;
+    const saving = p.videos * (CONFIG.singleVideoPrice - p.perVideo);
+    const body = "Hi,\n\nI'm interested in the " + p.name + " package (" + p.videos + " videos).\n\nOrganization:\nTypes of videos:\nIdeal start date:\n";
+    return (
+      '<div>' +
+        '<h3 class="pkg-title">' + esc(p.name) + ': ' + p.videos + ' videos</h3>' +
+        '<p class="pkg-blurb">' + esc(p.blurb) + '</p>' +
+        '<p class="pkg-price">' + money(total) + '</p>' +
+        '<p class="pkg-per">' + money(p.perVideo) + ' per video' +
+          (saving > 0 ? ', ' + money(saving) + ' less than buying them one at a time' : '') + '</p>' +
+        '<a class="btn btn-primary pkg-cta" href="' + esc(mailto(p.name + " package inquiry (" + p.videos + " videos)", body)) + '">Request the ' + esc(p.name) + ' package</a>' +
+        '<p class="pkg-terms">Invoiced in installments as videos are delivered.</p>' +
+      '</div>' +
+      '<dl class="pkg-details">' +
+        '<dt>Best for</dt><dd>' + esc(p.bestFor) + '</dd>' +
+        '<dt>Video length</dt><dd>Up to ' + CONFIG.maxMinutes + ' minutes each</dd>' +
+        '<dt>Schedule</dt><dd>' + esc(p.schedule) + '</dd>' +
+        '<dt>Revisions</dt><dd>' + esc(p.revisions) + '</dd>' +
+        '<dt>Extras</dt><dd><ul>' + p.extras.map(e => '<li>' + esc(e) + '</li>').join("") + '</ul></dd>' +
+      '</dl>'
+    );
+  }
+
+  let current = null;
+  function select(id, animate) {
+    const p = CONFIG.packages.find(x => x.id === id) || CONFIG.packages[0];
+    if (current === p.id) return;
+    current = p.id;
+    tabs.forEach(t => {
+      const on = t.dataset.id === p.id;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+    });
+    panel.setAttribute("aria-labelledby", "tab-" + p.id);
+    if (animate && !reduceMotion) {
+      panel.classList.add("is-changing");
+      setTimeout(() => { panel.innerHTML = panelHTML(p); panel.classList.remove("is-changing"); }, 160);
+    } else {
+      panel.innerHTML = panelHTML(p);
+    }
+  }
+  track.addEventListener("click", e => {
+    const b = e.target.closest(".pkg-btn");
+    if (b) select(b.dataset.id, true);
+  });
+  track.addEventListener("keydown", e => {
+    const i = tabs.indexOf(document.activeElement);
+    if (i < 0) return;
+    let n = null;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") n = (i + 1) % tabs.length;
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") n = (i - 1 + tabs.length) % tabs.length;
+    else if (e.key === "Home") n = 0;
+    else if (e.key === "End") n = tabs.length - 1;
+    if (n !== null) { e.preventDefault(); select(tabs[n].dataset.id, true); tabs[n].focus(); }
+  });
+  select(CONFIG.defaultPackage, false);
+})();
+</script>
+</body>
+</html>
