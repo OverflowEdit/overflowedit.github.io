@@ -9,6 +9,14 @@
 <meta property="og:title" content="Overflow Edit | Freelance video editing for universities">
 <meta property="og:description" content="Send raw footage, get back finished, captioned, on-brand videos. Packages from 3 to 30 videos.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Overflow Edit">
+<meta property="og:url" content="https://overflowedit.github.io/">
+<meta property="og:image" content="https://overflowedit.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Overflow Edit: Clear the video backlog. Freelance video editing for universities.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://overflowedit.github.io/">
 <meta name="theme-color" content="#141A23">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141A23'/%3E%3Cpath d='M9 6h14l-7 8z' fill='%23EF4E55'/%3E%3Crect x='15' y='12' width='2' height='15' fill='%23EF4E55'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -237,6 +245,36 @@
   .faq details p{ max-width:62ch; padding-bottom:22px; color:var(--text-2); }
   @media (prefers-reduced-motion:reduce){ .faq summary::after{ transition:none; } }
   @media (max-width:860px){ .faq-wrap{ grid-template-columns:1fr; gap:28px; } }
+  .faq-group{ padding:28px 0 6px; font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--mango); border-bottom:1px solid var(--line); }
+  .faq-group:first-child{ padding-top:0; }
+  .faq{ border-top:0; }
+  .faq-side{ display:grid; gap:28px; align-content:start; }
+  .sheet-card{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:16px; align-items:start; padding:20px; border:1px solid var(--line); border-radius:12px; background:var(--bg-2); text-decoration:none; transition:border-color .15s, background-color .15s; }
+  .sheet-card:hover{ border-color:var(--text-3); background:var(--bg-3); }
+  .sheet-icon{ width:44px; height:54px; display:grid; place-items:end center; padding-bottom:7px; border-radius:4px 14px 4px 4px; background:var(--text); color:var(--bg); font-size:.7rem; font-weight:800; letter-spacing:.04em; }
+  .sheet-card strong{ display:block; font-size:1.05rem; }
+  .sheet-card p{ margin-top:4px; font-size:.92rem; color:var(--text-2); }
+  .sheet-card span{ display:inline-block; margin-top:8px; font-size:.9rem; font-weight:700; color:var(--mango); }
+  .sheet-card:hover span{ text-decoration:underline; text-underline-offset:4px; }
+
+  /* Contact */
+  .contact{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:56px; align-items:center; }
+  .contact .section-intro{ margin-top:20px; }
+  .contact-card{ padding:28px; border:1px solid var(--line); border-radius:14px; background:var(--bg); }
+  .contact-label{ font-size:.85rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--text-3); }
+  .contact-email{ display:block; margin-top:8px; font-size:clamp(1.35rem,3vw,2rem); font-weight:750; letter-spacing:-.01em; overflow-wrap:anywhere; text-decoration:none; user-select:all; -webkit-user-select:all; }
+  .contact-actions{ margin-top:22px; display:flex; flex-wrap:wrap; gap:12px; }
+  .contact-note{ margin-top:18px; font-size:.92rem; color:var(--text-3); }
+  .contact-note a{ color:var(--text-2); }
+  .copy-btn svg{ width:16px; height:16px; }
+  .alt-email{ margin-top:14px; display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; font-size:.92rem; color:var(--text-3); }
+  .alt-email a{ color:var(--text-2); }
+  .copy-link{ padding:2px 8px; border:1px solid var(--bg-4); border-radius:999px; background:transparent; color:var(--text-2); font:inherit; font-size:.82rem; font-weight:700; cursor:pointer; }
+  .copy-link:hover{ border-color:var(--text-2); color:var(--text); }
+  .copy-link[data-copied]{ border-color:var(--teal); color:var(--teal); }
+  .sr-only{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+  @media (max-width:860px){ .contact{ grid-template-columns:1fr; gap:32px; } }
+  @media (max-width:480px){ .contact-card{ padding:20px; } .contact-actions .btn{ flex:1 1 100%; } }
 
   /* Footer */
   .site-footer{ padding-block:40px; border-top:1px solid var(--line); background:#10151D; }
@@ -258,7 +296,7 @@
       <a href="#formats">Formats</a>
       <a href="#process">Process</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn-primary btn-small js-email" href="#packages">Start a project</a>
+      <a class="btn btn-primary btn-small" href="#contact">Start a project</a>
     </nav>
   </div>
 </header>
@@ -274,7 +312,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#packages">See packages</a>
             <a class="btn btn-ghost" id="reel-btn" href="#formats" hidden>Watch the reel</a>
-            <a class="btn btn-ghost js-email" id="hero-email" href="#packages">Email us</a>
+            <a class="btn btn-ghost" id="hero-email" href="#contact">Get in touch</a>
           </div>
           <div class="facts">
             <div class="fact"><strong id="fact-price">$135 to $150</strong><span>per video, up to 15 minutes</span></div>
@@ -522,10 +560,10 @@
             <dt>Audio</dt><dd>Leveled for web playback (&minus;16 LUFS) with background noise reduced</dd>
             <dt>Graphics</dt><dd>Titles, lower thirds, and end slates from your brand guide</dd>
             <dt>Music</dt><dd>Royalty-free licensed tracks</dd>
-            <dt>Captions</dt><dd>SRT and VTT files, reviewed by a person</dd>
+            <dt>Captions</dt><dd>SRT and VTT files, every line checked by a person</dd>
             <dt>Transcript</dt><dd>Plain text, for accessibility and search</dd>
             <dt>Destinations</dt><dd>YouTube, Vimeo, Kaltura, Panopto, Canvas, or social</dd>
-            <dt>Archive</dt><dd>Project files kept for 6 months after delivery</dd>
+            <dt>Archive</dt><dd>Project files kept for 6 months after delivery, then deleted</dd>
           </dl>
           <div class="export-foot"><div class="meter"><i></i></div>Included in every package</div>
         </div>
@@ -535,15 +573,22 @@
 
   <section class="section" id="faq">
     <div class="wrap faq-wrap">
-      <h2 class="display">Questions</h2>
+      <div class="faq-side">
+        <h2 class="display">Questions</h2>
+        <a class="sheet-card" href="vendor-sheet.pdf" target="_blank" rel="noopener">
+          <div class="sheet-icon" aria-hidden="true">PDF</div>
+          <div>
+            <strong>Vendor sheet for purchasing</strong>
+            <p>Business details, billing terms, pricing, and how we handle student footage, on one page you can forward.</p>
+            <span>Download the vendor sheet</span>
+          </div>
+        </a>
+      </div>
       <div class="faq">
+        <h3 class="faq-group">The work</h3>
         <details>
           <summary>Do you film, or only edit?</summary>
           <p>We edit. Your team, a student crew, or a videographer handles the shoot, and we take it from raw footage to finished video.</p>
-        </details>
-        <details>
-          <summary>How do you get our footage?</summary>
-          <p>Share a Box, Google Drive, OneDrive, or Dropbox folder. Footage stays in your storage, and we delete our working copies after delivery on request.</p>
         </details>
         <details>
           <summary>What if a video runs longer than 15 minutes?</summary>
@@ -558,8 +603,26 @@
           <p>One consolidated set of notes from your team, left as time-stamped comments on the review link. Extra rounds are $25 each.</p>
         </details>
         <details>
+          <summary>How are captions made?</summary>
+          <p>We start from an automatic transcript, then a person checks every line against the audio, correcting names, technical terms, and timing. You get SRT and VTT caption files plus a plain-text transcript.</p>
+        </details>
+
+        <h3 class="faq-group">Purchasing and data</h3>
+        <details>
           <summary>How does billing work with a university?</summary>
-          <p>We provide a W-9, complete your supplier onboarding, and invoice as videos are delivered. Purchase orders and net-30 terms are fine.</p>
+          <p>Overflow Edit is a sole proprietorship. We provide a W-9, complete your supplier onboarding, and invoice as videos are delivered. Purchase orders and net-30 terms are fine.</p>
+        </details>
+        <details>
+          <summary>How do you get our footage?</summary>
+          <p>Share a Box, Google Drive, OneDrive, or Dropbox folder. Your footage stays in your storage. Our working copies are deleted once the 6-month archive period ends, or sooner if you ask.</p>
+        </details>
+        <details>
+          <summary>How do you handle footage that shows students?</summary>
+          <p>We follow your institution's FERPA requirements for any footage that shows students, such as lecture recordings or class sessions, and will complete your FERPA training if you ask.</p>
+        </details>
+        <details>
+          <summary>Will you sign an NDA or data agreement?</summary>
+          <p>Yes. We'll sign your institution's NDA or data protection agreement before any footage is shared.</p>
         </details>
         <details>
           <summary>Who owns the finished videos?</summary>
@@ -568,6 +631,29 @@
       </div>
     </div>
   </section>
+
+  <section class="section band" id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2 class="display">Start a project</h2>
+        <p class="section-intro">Tell us the kinds of videos you have, roughly how many, and when you'd like to start. We'll set up a short kickoff call from there.</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-label">Email</div>
+        <a class="contact-email js-email" href="#contact" data-email-text>OverflowEdit@proton.me</a>
+        <div class="contact-actions">
+          <button type="button" class="btn btn-primary copy-btn" data-copy-email>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="copy-label">Copy address</span>
+          </button>
+          <a class="btn btn-ghost js-email" href="#contact">Open in email app</a>
+        </div>
+        <p class="contact-note">Buying through purchasing? Send them our <a href="vendor-sheet.pdf" target="_blank" rel="noopener">one-page vendor sheet</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
 
 </main>
 
@@ -578,6 +664,7 @@
       Overflow Edit
     </a>
     <span>Freelance video editing for colleges and universities.</span>
+    <a class="js-email" href="#contact" data-email-text>OverflowEdit@proton.me</a>
     <span>&copy; 2026 Overflow Edit</span>
   </div>
 </footer>
@@ -657,6 +744,45 @@ const CONFIG = {
   const generalBody = "Hi,\n\nI'd like to talk about video editing help.\n\nOrganization:\nTypes of videos:\nRough number of videos:\nIdeal start date:\n";
   document.querySelectorAll(".js-email").forEach(a => { a.href = mailto("Video editing inquiry", generalBody); });
   document.querySelectorAll("[data-email-text]").forEach(el => { el.textContent = CONFIG.email; });
+
+  /* Copy-email buttons (some are rendered later inside the package panel, so listen on the document) */
+  const copyStatus = document.getElementById("copy-status");
+  const copyText = text => {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise((resolve, reject) => {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand("copy");
+      ta.remove();
+      ok ? resolve() : reject();
+    });
+  };
+  document.addEventListener("click", e => {
+    const btn = e.target.closest("[data-copy-email]");
+    if (!btn) return;
+    const label = btn.querySelector(".copy-label") || btn;
+    const original = label.textContent;
+    copyText(CONFIG.email).then(() => {
+      label.textContent = "Copied";
+      btn.setAttribute("data-copied", "");
+      copyStatus.textContent = "Email address copied: " + CONFIG.email;
+    }, () => {
+      label.textContent = "Selected, copy it now";
+      const target = document.querySelector(".contact-email");
+      if (target) window.getSelection().selectAllChildren(target);
+    });
+    clearTimeout(btn._t);
+    btn._t = setTimeout(() => {
+      label.textContent = original;
+      btn.removeAttribute("data-copied");
+      copyStatus.textContent = "";
+    }, 2200);
+  });
   document.querySelectorAll("[data-cfg]").forEach(el => {
     const v = CONFIG[el.dataset.cfg];
     if (v !== undefined) el.textContent = typeof v === "number" ? money(v) : v;
@@ -820,6 +946,8 @@ const CONFIG = {
         '<p class="pkg-per">' + money(p.perVideo) + ' per video' +
           (saving > 0 ? ', ' + money(saving) + ' less than buying them one at a time' : '') + '</p>' +
         '<a class="btn btn-primary pkg-cta" href="' + esc(mailto(p.name + " package inquiry (" + p.videos + " videos)", body)) + '">Request the ' + esc(p.name) + ' package</a>' +
+        '<p class="alt-email">Or email <a href="' + esc(mailto(p.name + " package inquiry (" + p.videos + " videos)", body)) + '">' + esc(CONFIG.email) + '</a>' +
+          '<button type="button" class="copy-link" data-copy-email>Copy</button></p>' +
         '<p class="pkg-terms">Invoiced in installments as videos are delivered.</p>' +
       '</div>' +
       '<dl class="pkg-details">' +
