@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>Overflow Edit | Freelance video editing for universities</title>
-<meta name="description" content="Freelance video editing for university media, communications, and online-learning teams. Videos up to 15 minutes from $45, with captions, brand-matched titles, and PO-friendly invoicing.">
+<meta name="description" content="Freelance video editing for university media, communications, and online-learning teams. Videos up to 15 minutes from $70, with captions, brand-matched titles, and PO-friendly invoicing.">
 <meta property="og:title" content="Overflow Edit | Freelance video editing for universities">
-<meta property="og:description" content="Send raw footage, get back finished, captioned, on-brand videos. Packages from 3 to 30 videos.">
+<meta property="og:description" content="Send raw footage, get back finished, captioned, on-brand videos. Packages from 3 to 15 videos.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Overflow Edit">
 <meta property="og:url" content="https://overflowedit.github.io/">
@@ -332,7 +332,7 @@
             <a class="btn btn-ghost" id="hero-email" href="#contact">Get in touch</a>
           </div>
           <div class="facts">
-            <div class="fact"><strong id="fact-price">$45 to $60</strong><span>per video, up to 15 minutes</span></div>
+            <div class="fact"><strong id="fact-price">$70 to $80</strong><span>per video, up to 15 minutes</span></div>
             <div class="fact"><strong>5 days</strong><span>to your first rough cut</span></div>
             <div class="fact"><strong>2 rounds</strong><span>of revisions on every video</span></div>
             <div class="fact"><strong>PO + net-30</strong><span>university-friendly billing</span></div>
@@ -380,10 +380,9 @@
         <table class="noscript-table">
           <thead><tr><th>Package</th><th>Videos</th><th>Price</th></tr></thead>
           <tbody>
-            <tr><td>Pilot</td><td>3</td><td>$180</td></tr>
-            <tr><td>Semester</td><td>8</td><td>$440</td></tr>
-            <tr><td>Backlog</td><td>15</td><td>$750</td></tr>
-            <tr><td>Department</td><td>30</td><td>$1,350</td></tr>
+            <tr><td>Pilot</td><td>3</td><td>$240</td></tr>
+            <tr><td>Semester</td><td>8</td><td>$600</td></tr>
+            <tr><td>Backlog</td><td>15</td><td>$1,050</td></tr>
           </tbody>
         </table>
       </noscript>
@@ -395,7 +394,7 @@
         </div>
         <div>
           <h3>One-off and custom work</h3>
-          <p>Single videos are <span data-cfg="singleVideoPrice">$60</span> each. Motion graphics, animation, or anything outside a package is <span data-cfg="hourlyRate">$35</span> an hour, quoted up front.</p>
+          <p>Single videos are <span data-cfg="singleVideoPrice">$80</span> each. Motion graphics, animation, or anything outside a package is <span data-cfg="hourlyRate">$35</span> an hour, quoted up front.</p>
         </div>
         <div>
           <h3>Add-ons</h3>
@@ -638,7 +637,7 @@
 const CONFIG = {
   email: "OverflowEdit@proton.me", // your contact email
   reelUrl: "",                    // link to your showreel on YouTube or Vimeo; leave "" to hide the button
-  singleVideoPrice: 60,           // price for one video bought on its own
+  singleVideoPrice: 80,           // price for one video bought on its own
   hourlyRate: 35,                 // rate for custom or hourly work
   maxMinutes: 15,                 // maximum finished length of one video
   defaultPackage: "backlog",      // which package is open when the page loads
@@ -650,7 +649,7 @@ const CONFIG = {
       id: "pilot",
       name: "Pilot",
       videos: 3,
-      perVideo: 60,
+      perVideo: 80,
       blurb: "A low-risk way to see how we work, using a few of your priority videos.",
       bestFor: "Testing the fit before committing to more",
       schedule: "First rough cut within 5 business days; all 3 delivered within about 3 weeks",
@@ -661,7 +660,7 @@ const CONFIG = {
       id: "semester",
       name: "Semester",
       videos: 8,
-      perVideo: 55,
+      perVideo: 75,
       blurb: "Enough for a course's module intros or a term's worth of events and promos.",
       bestFor: "One course, program, or office with a defined list of videos",
       schedule: "About 1 video a week; done in roughly 8 weeks",
@@ -672,23 +671,12 @@ const CONFIG = {
       id: "backlog",
       name: "Backlog",
       videos: 15,
-      perVideo: 50,
+      perVideo: 70,
       blurb: "For teams working through a queue of shot-but-unedited footage while they rehire.",
       bestFor: "Clearing a backlog while your team is short-staffed",
       schedule: "1 to 2 videos a week; done in about 10 weeks, with a short weekly status update",
       revisions: "2 rounds per video",
       extras: ["Brand title and lower-third template", "Custom thumbnail for each video", "You set the priority order and can change it anytime"]
-    },
-    {
-      id: "department",
-      name: "Department",
-      videos: 30,
-      perVideo: 45,
-      blurb: "Steady, reserved editing capacity across a full semester.",
-      bestFor: "Covering an open editor position for a semester",
-      schedule: "About 2 videos a week, reserved for you, across roughly 16 weeks",
-      revisions: "3 rounds per video",
-      extras: ["Everything in Backlog", "A 30-minute check-in call each week", "Monthly invoicing"]
     }
   ]
 };
