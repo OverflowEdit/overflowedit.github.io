@@ -114,8 +114,9 @@
   .nle-tc{ color:var(--mango); font-weight:700; font-size:.95rem; letter-spacing:.02em; font-variant-numeric:tabular-nums; }
   .compare{ --pos:36%; position:relative; aspect-ratio:16/9; max-width:100%; overflow:hidden; border-radius:8px; background:#0E141B; container-type:inline-size; user-select:none; -webkit-user-select:none; touch-action:pan-y; cursor:ew-resize; }
   .shot{ position:absolute; inset:0; overflow:hidden; }
-  .shot svg{ width:100%; height:100%; }
-  .shot-raw .scene{ filter:saturate(.22) contrast(.66) brightness(1.2); transform:scale(1.08) rotate(-1.2deg) translate(-1.2%,1%); }
+  .scene{ position:absolute; inset:0; }
+  .scene img{ display:block; width:100%; height:100%; object-fit:cover; }
+  .shot-raw .scene{ filter:saturate(.3) contrast(.62) brightness(1.16); transform:scale(1.08) rotate(-1.2deg) translate(-1.2%,1%); }
   .shot-raw::after{ content:""; position:absolute; inset:0; background:rgba(150,160,172,.12); }
   .shot-fin{ clip-path:inset(0 0 0 var(--pos)); }
   .chip{ position:absolute; top:3.5%; z-index:2; padding:.55cqw 1.2cqw; border-radius:999px; font-size:max(11px,1.3cqw); font-weight:700; line-height:1.2; }
@@ -124,7 +125,7 @@
   .hud{ position:absolute; z-index:2; font-size:max(9px,1.2cqw); font-weight:600; letter-spacing:.05em; color:rgba(255,255,255,.8); font-variant-numeric:tabular-nums; }
   .hud-top{ left:2.5%; top:11%; }
   .hud-bot{ left:2.5%; bottom:4%; }
-  .lower3{ position:absolute; left:42%; bottom:19%; z-index:2; display:flex; }
+  .lower3{ position:absolute; left:41%; bottom:17%; z-index:2; display:flex; }
   .lower3 i{ width:.6cqw; background:var(--mango); }
   .lower3 div{ padding:1.1cqw 1.8cqw; background:rgba(14,20,27,.84); }
   .lower3 strong{ display:block; font-size:max(10px,2.3cqw); font-weight:750; line-height:1.15; color:#FFFFFF; }
@@ -136,7 +137,7 @@
   .compare input{ position:absolute; inset:0; z-index:4; width:100%; height:100%; margin:0; opacity:0; pointer-events:none; -webkit-appearance:none; appearance:none; }
   .compare input:focus-visible ~ .handle .knob{ outline:3px solid var(--mango); outline-offset:3px; }
   .compare-hint{ display:flex; justify-content:space-between; gap:12px; padding:10px 6px 2px; font-size:.85rem; color:var(--text-3); }
-  @media (max-width:600px){ .knob{ width:38px; height:38px; margin:-19px 0 0 -19px; } .hud{ display:none; } }
+  @media (max-width:600px){ .knob{ width:38px; height:38px; margin:-19px 0 0 -19px; } .hud{ display:none; } .caption{ left:63%; } }
 
   /* Selected work (shown only when CONFIG.work has items) */
   .work-grid{ margin-top:44px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
@@ -164,25 +165,41 @@
   @media (max-width:960px){ .formats{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
   @media (max-width:600px){ .formats{ grid-template-columns:1fr; } }
 
-  /* How it works: steps beside the export settings */
-  .how{ margin-top:44px; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:56px; align-items:start; }
-  .steps{ list-style:none; margin:0; padding:0 0 0 30px; display:grid; gap:28px; border-left:2px solid var(--bg-4); }
-  .steps li{ position:relative; }
-  .steps li::before{ content:""; position:absolute; top:5px; left:-38px; width:13px; height:13px; background:var(--iris); transform:rotate(45deg); }
-  .steps .when{ display:block; font-size:.85rem; font-weight:700; color:var(--mango); font-variant-numeric:tabular-nums; }
-  .steps h3{ margin-top:4px; font-size:1.25rem; font-weight:750; }
-  .steps p{ margin-top:6px; font-size:1rem; color:var(--text-2); }
-  @media (max-width:900px){ .how{ grid-template-columns:1fr; gap:44px; } }
+  /* How it works: clickable steps beside the export settings */
+  .how{ margin-top:40px; }
+  .how-steps{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+  .how-step{ position:relative; padding:20px 8px 4px 0; border:0; background:none; font:inherit; text-align:left; color:var(--text-2); cursor:pointer; }
+  .how-step::before{ content:""; position:absolute; top:6px; left:0; right:0; height:3px; border-radius:2px; background:var(--bg-4); transition:background-color .2s; }
+  .how-step::after{ content:""; position:absolute; top:2px; left:0; width:11px; height:11px; background:var(--bg-4); transform:rotate(45deg); transition:background-color .2s; }
+  .how-step.done::before, .how-step.done::after, .how-step[aria-selected="true"]::before, .how-step[aria-selected="true"]::after{ background:var(--iris); }
+  .how-step[aria-selected="true"]::after{ box-shadow:0 0 0 4px rgba(132,121,244,.25); }
+  .how-step .when{ display:block; font-size:.8rem; font-weight:700; color:var(--mango); font-variant-numeric:tabular-nums; }
+  .how-step .name{ display:block; margin-top:2px; font-size:1.2rem; font-weight:750; line-height:1.2; }
+  .how-step:hover .name, .how-step[aria-selected="true"] .name{ color:var(--text); }
+  .how-body{ margin-top:22px; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:20px; align-items:stretch; }
+  .how-panel{ display:flex; flex-direction:column; gap:10px; padding:22px 24px; border:1px solid var(--line); border-radius:12px; background:var(--bg); }
+  .how-panel h3{ font-size:1.3rem; font-weight:750; }
+  .how-panel h3 span{ display:block; margin-bottom:4px; font-size:.8rem; font-weight:700; color:var(--text-3); }
+  .how-panel p{ font-size:1.02rem; color:var(--text-2); }
+  .how-next{ margin-top:auto; align-self:flex-start; padding:6px 0 0; border:0; background:none; font:inherit; font-size:.95rem; font-weight:700; color:var(--mango); cursor:pointer; }
+  .how-next:hover{ text-decoration:underline; text-underline-offset:4px; }
+  .how:not(.is-ready) .how-next{ display:none; }
+  .how-panels{ display:grid; gap:12px; }
   .export{ overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--bg); }
   .export-head{ display:flex; justify-content:space-between; gap:12px; padding:12px 18px; background:var(--bg-3); font-size:.88rem; font-weight:700; color:var(--text); }
   .export-head span{ font-weight:500; color:var(--text-3); }
-  .export dl{ margin:0; padding:4px 18px 4px; display:grid; grid-template-columns:auto minmax(0,1fr); }
-  .export dt{ padding:12px 24px 12px 0; font-size:.9rem; color:var(--text-3); border-bottom:1px solid var(--line); }
-  .export dd{ margin:0; padding:12px 0; font-size:.98rem; border-bottom:1px solid var(--line); }
+  .export dl{ margin:0; padding:4px 18px; display:grid; grid-template-columns:auto minmax(0,1fr); }
+  .export dt{ padding:10px 20px 10px 0; font-size:.9rem; color:var(--text-3); border-bottom:1px solid var(--line); }
+  .export dd{ margin:0; padding:10px 0; font-size:.96rem; border-bottom:1px solid var(--line); }
   .export dt:last-of-type, .export dd:last-of-type{ border-bottom:0; }
-  .export-foot{ display:flex; align-items:center; gap:14px; padding:14px 18px; border-top:1px solid var(--line); font-size:.88rem; color:var(--text-2); }
-  .meter{ flex:1; height:6px; border-radius:3px; background:var(--bg-4); overflow:hidden; }
-  .meter i{ display:block; height:100%; width:100%; background:var(--teal); }
+  .spec-chips{ display:flex; flex-wrap:wrap; gap:8px; padding:16px 18px 0; }
+  .spec-chip{ padding:6px 12px; border:1px solid var(--bg-4); border-radius:999px; background:transparent; font:inherit; font-size:.88rem; font-weight:600; color:var(--text-2); cursor:pointer; transition:background-color .15s, border-color .15s, color .15s; }
+  .spec-chip:hover{ border-color:var(--text-3); color:var(--text); }
+  .spec-chip[aria-pressed="true"]{ border-color:var(--teal); background:rgba(45,180,151,.14); color:var(--text); }
+  .spec-readout{ margin:14px 18px 18px; padding:12px 14px; border-left:3px solid var(--teal); border-radius:0 6px 6px 0; background:var(--bg-2); font-size:.98rem; min-height:3.3em; }
+  .spec-readout strong{ display:block; font-size:.78rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--teal); }
+  @media (max-width:900px){ .how-body{ grid-template-columns:1fr; } }
+  @media (max-width:640px){ .how-steps{ grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:14px; } .how-step .name{ font-size:1.08rem; } }
   @media (max-width:480px){ .export dl{ grid-template-columns:1fr; } .export dt{ padding-bottom:0; border-bottom:0; } .export dd{ padding-top:2px; } }
 
   /* Packages */
@@ -328,21 +345,21 @@
           </div>
         <div class="compare" id="compare">
           <div class="shot shot-raw" aria-hidden="true">
-            <div class="scene" data-scene></div>
+            <div class="scene"><img src="images/hero-interview.webp" width="1600" height="900" alt="" decoding="async"></div>
             <span class="chip chip-raw">Raw</span>
             <span class="hud hud-top">ISO 800 &nbsp; F2.8 &nbsp; 1/50 &nbsp; 5600K</span>
             <span class="hud hud-bot">A001_C004_1021</span>
           </div>
           <div class="shot shot-fin" aria-hidden="true">
-            <div class="scene" data-scene></div>
+            <div class="scene"><img src="images/hero-interview.webp" width="1600" height="900" alt="" fetchpriority="high" decoding="async"></div>
             <span class="chip chip-fin">Finished</span>
-            <div class="lower3"><i></i><div><strong>Dr. Maya Okafor</strong><span>Professor of Marine Science</span></div></div>
-            <span class="caption">The reef bounced back fast.</span>
+            <div class="lower3"><i></i><div><strong>Dr. Daniel Reyes</strong><span>Professor of Archaeology</span></div></div>
+            <span class="caption">It&rsquo;s older than we thought.</span>
           </div>
           <input type="range" id="compare-range" min="0" max="100" value="36" aria-label="Compare raw footage with the finished edit">
           <div class="handle"><div class="knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
         </div>
-          <div class="compare-hint"><span>Drag to compare raw footage with a finished edit.</span><span>Illustration</span></div>
+          <div class="compare-hint"><span>Drag to compare raw footage with a finished edit.</span><span>Stock photo, sample edit</span></div>
         </div>
       </div>
     </div>
@@ -466,43 +483,50 @@
         <h2 class="display">How it works</h2>
         <p class="section-intro">You keep control of priorities and approvals. Every video comes back graded, mixed, titled, and captioned, ready to publish.</p>
       </div>
-      <div class="how">
-        <ol class="steps">
-          <li>
-            <span class="when">Day 1</span>
-            <h3>Kickoff</h3>
+      <div class="how" id="how">
+        <div class="how-steps" role="tablist" aria-label="Project steps">
+          <button type="button" class="how-step" role="tab" id="how-tab-1" aria-controls="how-panel-1" aria-selected="true"><span class="when">Day 1</span><span class="name">Kickoff</span></button>
+          <button type="button" class="how-step" role="tab" id="how-tab-2" aria-controls="how-panel-2" aria-selected="false" tabindex="-1"><span class="when">Within 5 business days</span><span class="name">Rough cut</span></button>
+          <button type="button" class="how-step" role="tab" id="how-tab-3" aria-controls="how-panel-3" aria-selected="false" tabindex="-1"><span class="when">2 rounds included</span><span class="name">Review</span></button>
+          <button type="button" class="how-step" role="tab" id="how-tab-4" aria-controls="how-panel-4" aria-selected="false" tabindex="-1"><span class="when">On schedule</span><span class="name">Delivery</span></button>
+        </div>
+        <div class="how-body">
+          <div class="how-panels">
+          <div class="how-panel" role="tabpanel" id="how-panel-1" aria-labelledby="how-tab-1" tabindex="0">
+            <h3><span>Step 1 of 4 &middot; Day 1</span>Kickoff</h3>
             <p>A 30-minute call to agree on style, specs, and priorities. Then share a folder with your footage and brand guide.</p>
-          </li>
-          <li>
-            <span class="when">Within 5 business days</span>
-            <h3>Rough cut</h3>
+            <button type="button" class="how-next">Next: Rough cut <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <div class="how-panel" role="tabpanel" id="how-panel-2" aria-labelledby="how-tab-2" tabindex="0">
+            <h3><span>Step 2 of 4 &middot; Within 5 business days</span>Rough cut</h3>
             <p>Your first rough cut arrives on a private review link. After that, videos follow your package schedule.</p>
-          </li>
-          <li>
-            <span class="when">2 rounds included</span>
-            <h3>Review</h3>
+            <button type="button" class="how-next">Next: Review <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <div class="how-panel" role="tabpanel" id="how-panel-3" aria-labelledby="how-tab-3" tabindex="0">
+            <h3><span>Step 3 of 4 &middot; 2 rounds included</span>Review</h3>
             <p>You and your stakeholders leave time-stamped comments right on the video. There's nothing to install.</p>
-          </li>
-          <li>
-            <span class="when">On schedule</span>
-            <h3>Delivery</h3>
+            <button type="button" class="how-next">Next: Delivery <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <div class="how-panel" role="tabpanel" id="how-panel-4" aria-labelledby="how-tab-4" tabindex="0">
+            <h3><span>Step 4 of 4 &middot; On schedule</span>Delivery</h3>
             <p>Final files in the formats you need, with captions and a transcript, ready to publish.</p>
-          </li>
-        </ol>
-        <div class="export">
-          <div class="export-head">Export settings<span>Applied to every video</span></div>
-          <dl>
-            <dt>Format</dt><dd>H.264 MP4 at 1080p, or 4K when your footage supports it</dd>
-            <dt>Color</dt><dd>Corrected and matched across every shot</dd>
-            <dt>Audio</dt><dd>Leveled for web playback (&minus;16 LUFS) with background noise reduced</dd>
-            <dt>Graphics</dt><dd>Titles, lower thirds, and end slates from your brand guide</dd>
-            <dt>Music</dt><dd>Royalty-free licensed tracks</dd>
-            <dt>Captions</dt><dd>SRT and VTT files, every line checked by a person</dd>
-            <dt>Transcript</dt><dd>Plain text, for accessibility and search</dd>
-            <dt>Destinations</dt><dd>YouTube, Vimeo, Kaltura, Panopto, Canvas, or social</dd>
-            <dt>Archive</dt><dd>Project files kept for 6 months after delivery, then deleted</dd>
-          </dl>
-          <div class="export-foot"><div class="meter"><i></i></div>Included in every package</div>
+            <button type="button" class="how-next">Back to the start <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          </div>
+          <div class="export">
+            <div class="export-head">Export settings<span>Included in every package</span></div>
+            <dl class="spec-list">
+              <dt>Format</dt><dd>H.264 MP4 at 1080p, or 4K when your footage supports it</dd>
+              <dt>Color</dt><dd>Corrected and matched across every shot</dd>
+              <dt>Audio</dt><dd>Leveled for web playback (&minus;16 LUFS) with background noise reduced</dd>
+              <dt>Graphics</dt><dd>Titles, lower thirds, and end slates from your brand guide</dd>
+              <dt>Music</dt><dd>Royalty-free licensed tracks</dd>
+              <dt>Captions</dt><dd>SRT and VTT files, every line checked by a person</dd>
+              <dt>Transcript</dt><dd>Plain text, for accessibility and search</dd>
+              <dt>Destinations</dt><dd>YouTube, Vimeo, Kaltura, Panopto, Canvas, or social</dd>
+              <dt>Archive</dt><dd>Project files kept for 6 months after delivery, then deleted</dd>
+            </dl>
+          </div>
         </div>
       </div>
     </div>
@@ -750,61 +774,6 @@ const CONFIG = {
     document.getElementById("work").hidden = false;
   }
 
-  /* Hero scene: one illustrated interview frame used for both the raw and finished layers */
-  function sceneSVG() {
-    let seed = 7;
-    const r = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-    const colors = ["#8479F4", "#F2AA3F", "#2DB497", "#EF4E55", "#E8DFCF", "#4A6FA5", "#C98A4B"];
-    const shelves = [{ y: 100, h: 140 }, { y: 254, h: 140 }, { y: 408, h: 140 }, { y: 562, h: 150 }];
-    let books = "";
-    shelves.forEach(s => {
-      let x = 1196;
-      while (x < 1540) {
-        const w = 14 + r() * 22, hh = s.h * (0.7 + r() * 0.27);
-        if (x + w > 1544) break;
-        books += '<rect x="' + x.toFixed(1) + '" y="' + (s.y + s.h - hh).toFixed(1) + '" width="' + (w - 2).toFixed(1) + '" height="' + hh.toFixed(1) + '" fill="' + colors[Math.floor(r() * colors.length)] + '" opacity="' + (0.5 + r() * 0.35).toFixed(2) + '"/>';
-        x += w;
-        if (r() < 0.12) x += 26;
-      }
-      books += '<rect x="1180" y="' + (s.y + s.h) + '" width="380" height="14" fill="#0D1A22"/>';
-    });
-    return '<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">' +
-      '<defs>' +
-        '<linearGradient id="wallG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A4A57"/><stop offset="1" stop-color="#172833"/></linearGradient>' +
-        '<radialGradient id="winG" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#FFE7BA"/><stop offset=".55" stop-color="#F3BC6C"/><stop offset="1" stop-color="#C98340"/></radialGradient>' +
-        '<radialGradient id="glowG" cx=".2" cy=".35" r=".65"><stop offset="0" stop-color="#F6C27A" stop-opacity=".42"/><stop offset="1" stop-color="#F6C27A" stop-opacity="0"/></radialGradient>' +
-        '<linearGradient id="sweaterG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C7614A"/><stop offset="1" stop-color="#99442F"/></linearGradient>' +
-        '<filter id="softF" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter>' +
-        '<filter id="bokehF" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>' +
-        '<clipPath id="headC"><ellipse cx="980" cy="362" rx="92" ry="112"/></clipPath>' +
-      '</defs>' +
-      '<rect width="1600" height="900" fill="url(#wallG)"/>' +
-      '<g filter="url(#softF)">' +
-        '<rect x="90" y="110" width="420" height="570" rx="6" fill="url(#winG)"/>' +
-        '<rect x="292" y="110" width="16" height="570" fill="#24404D"/><rect x="90" y="388" width="420" height="16" fill="#24404D"/>' +
-        '<polygon points="510,130 930,430 930,640 510,680" fill="#F6C27A" opacity=".07"/>' +
-        '<g transform="translate(560 600)"><path d="M10 120 L90 120 L80 40 L20 40 Z" fill="#7E5236"/>' +
-          '<ellipse cx="30" cy="0" rx="22" ry="60" fill="#2F6B53" transform="rotate(-28 30 0)"/><ellipse cx="60" cy="-12" rx="22" ry="70" fill="#3E8466"/><ellipse cx="88" cy="4" rx="20" ry="58" fill="#2F6B53" transform="rotate(30 88 4)"/></g>' +
-        '<rect x="1180" y="80" width="380" height="650" fill="#132430"/>' + books +
-      '</g>' +
-      '<rect width="1600" height="900" fill="url(#glowG)"/>' +
-      '<g filter="url(#bokehF)"><circle cx="1290" cy="190" r="40" fill="#FFD08A" opacity=".5"/><circle cx="1470" cy="330" r="30" fill="#FFD08A" opacity=".4"/><circle cx="1380" cy="520" r="46" fill="#FFC56F" opacity=".35"/><circle cx="1230" cy="640" r="28" fill="#FFE3B0" opacity=".35"/></g>' +
-      '<rect y="800" width="1600" height="100" fill="#0F1E27"/>' +
-      '<ellipse cx="1030" cy="600" rx="260" ry="320" fill="#0B161D" opacity=".28" filter="url(#bokehF)"/>' +
-      '<path d="M700 900C716 690 820 548 980 542C1140 548 1244 690 1260 900Z" fill="url(#sweaterG)"/>' +
-      '<path d="M908 556L980 650L1052 556L1026 546L980 606L934 546Z" fill="#EDE6DA"/>' +
-      '<rect x="944" y="440" width="72" height="116" fill="#8C5A3D"/>' +
-      '<ellipse cx="980" cy="362" rx="92" ry="112" fill="#A46D4C"/>' +
-      '<ellipse cx="1028" cy="376" rx="58" ry="104" fill="#87553A" opacity=".45" clip-path="url(#headC)"/>' +
-      '<ellipse cx="1068" cy="372" rx="14" ry="24" fill="#93603F"/>' +
-      '<path d="M888 360C880 258 940 228 985 230C1050 232 1086 278 1076 360C1062 300 1022 284 985 285C946 286 906 300 888 360Z" fill="#231915"/>' +
-      '<rect x="918" y="350" width="54" height="36" rx="13" fill="none" stroke="#17110E" stroke-width="5"/><rect x="990" y="350" width="54" height="36" rx="13" fill="none" stroke="#17110E" stroke-width="5"/><path d="M972 364H990" stroke="#17110E" stroke-width="5"/>' +
-      '<path d="M748 770C768 680 826 584 906 558" stroke="#FFD9A0" stroke-width="7" fill="none" opacity=".35" stroke-linecap="round"/>' +
-    '</svg>';
-  }
-  const scene = sceneSVG();
-  document.querySelectorAll("[data-scene]").forEach(el => { el.innerHTML = scene; });
-
   /* Before/after comparison: drag, click, or use arrow keys */
   const compare = document.getElementById("compare");
   const range = document.getElementById("compare-range");
@@ -930,6 +899,61 @@ const CONFIG = {
     if (n !== null) { e.preventDefault(); select(tabs[n].dataset.id, true); tabs[n].focus(); }
   });
   select(CONFIG.defaultPackage, false);
+
+  /* How it works: step tabs, and export settings as chips with one readout */
+  {
+    const howTabs = [...document.querySelectorAll(".how-step")];
+    const howPanels = howTabs.map(t => document.getElementById(t.getAttribute("aria-controls")));
+    const showStep = (i, focus) => {
+      howTabs.forEach((t, j) => {
+        const on = j === i;
+        t.setAttribute("aria-selected", on);
+        t.tabIndex = on ? 0 : -1;
+        t.classList.toggle("done", j < i);
+        howPanels[j].hidden = !on;
+      });
+      if (focus) howTabs[i].focus();
+    };
+    howTabs.forEach((t, i) => {
+      t.addEventListener("click", () => showStep(i));
+      t.addEventListener("keydown", e => {
+        const k = { ArrowRight: i + 1, ArrowDown: i + 1, ArrowLeft: i - 1, ArrowUp: i - 1, Home: 0, End: howTabs.length - 1 }[e.key];
+        if (k === undefined) return;
+        e.preventDefault();
+        showStep((k + howTabs.length) % howTabs.length, true);
+      });
+    });
+    document.querySelectorAll(".how-next").forEach((b, i) => b.addEventListener("click", () => showStep((i + 1) % howTabs.length, true)));
+    showStep(0, false);
+    document.getElementById("how").classList.add("is-ready");
+
+    const list = document.querySelector(".spec-list");
+    if (list) {
+      const items = [...list.querySelectorAll("dt")].map(dt => ({ name: dt.textContent, detail: dt.nextElementSibling.innerHTML }));
+      const chips = document.createElement("div");
+      chips.className = "spec-chips";
+      chips.setAttribute("role", "group");
+      chips.setAttribute("aria-label", "Export settings");
+      const readout = document.createElement("p");
+      readout.className = "spec-readout";
+      readout.setAttribute("aria-live", "polite");
+      const buttons = items.map((it, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "spec-chip";
+        b.textContent = it.name;
+        b.addEventListener("click", () => pick(i));
+        chips.appendChild(b);
+        return b;
+      });
+      const pick = i => {
+        buttons.forEach((b, j) => b.setAttribute("aria-pressed", j === i));
+        readout.innerHTML = "<strong>" + items[i].name + "</strong>" + items[i].detail;
+      };
+      list.replaceWith(chips, readout);
+      pick(0);
+    }
+  }
 })();
 </script>
 </body>
